@@ -6,7 +6,7 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\taddOrder: async () => {\n\t\tconst orderId = this.generateRandomID();\n\t\tawait add_order.run({id: orderId});\n\t\tawait add_product.run({id: orderId});\n\t\tawait fetch_orders.run();\n\t\tawait resetWidget('placeOrder');\n\t\treturn closeModal('placeOrder');\n\t},\n\tgenerateRandomID: () => {\n\t\treturn \"_\" + Math.random().toString(36).substr(3,9);\n\t},\n\tupdateOrder: async() =>{\n\t\tawait edit_order.run();\n\t\tawait fetch_orders.run();\n\t\treturn closeModal('edit_order1');\n\t},\n\trefundOrder: async() => {\n\t\tawait stripe_refund.run();\n\t\tawait update_order_amount.run();\n\t\treturn await fetch_orders.run();\n\t}\n}\n",
+    "body": "export default {\n\taddOrder: async () => {\n\t\tconst orderId = this.generateRandomID();\n\t\tawait add_order.run({id: orderId});\n\t\tawait add_product.run({id: orderId});\n\t\tawait fetch_orders.run();\n\t\tawait resetWidget('placeOrder');\n\t\treturn closeModal('placeOrder');\n\t},\n\tgenerateRandomID: () => {\n\t\treturn Math.random().toString(36).substring(2,9)\n\t},\n\tupdateOrder: async() =>{\n\t\tawait edit_order.run();\n\t\tawait fetch_orders.run();\n\t\treturn closeModal('edit_order1');\n\t},\n\trefundOrder: async() => {\n\t\tawait stripe_refund.run();\n\t\tawait update_order_amount.run();\n\t\treturn await fetch_orders.run();\n\t}\n}\n",
     "variables": []
   },
   "id": "Raghava s kitchen_Utility",

@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n\t\treturn \"_\" + Math.random().toString(36).substr(3,9);\n\t}",
+      "body": "() => {\n\t\treturn Math.random().toString(36).substring(2,9)\n\t}",
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,7 +33,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n\t\treturn \"_\" + Math.random().toString(36).substr(3,9);\n\t}"
+      "() => {\n\t\treturn Math.random().toString(36).substring(2,9)\n\t}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
